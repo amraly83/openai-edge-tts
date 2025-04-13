@@ -50,7 +50,7 @@ def text_to_speech():
     output_file_ext = os.path.splitext(output_file_path)[1]
 
     # Return the file with the correct MIME type
-    return send_file(output_file_path, mimetype=mime_type, as_attachment=True, download_name=f"speech.{response_format}")
+    return send_file(output_file_path, mimetype=mime_type, as_attachment=True, download_name=f"speech{output_file_ext}")
 
 @app.route('/v1/models', methods=['GET', 'POST'])
 @app.route('/models', methods=['GET', 'POST'])
